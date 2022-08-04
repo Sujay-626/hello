@@ -1,9 +1,7 @@
 const express=require("express");
 const router=express.Router();
-const abc=require('../posts.json');
 //importing mongoose modules
 const Post=require('../models/profile');
-
 
 router.post('/', async (req,res)=>{
 	const details = new Post({
@@ -35,5 +33,7 @@ router.get('/',async (req,res)=>{
 })
 
 router.delete("/",async (req,res)=>{
-	await posts.Post.remove("_id.params.id")
+	const post=await Post.remove("_id.params.id")
 })
+
+module.exports=router;

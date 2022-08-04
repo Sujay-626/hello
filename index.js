@@ -9,11 +9,12 @@ app.use(bodyparser.urlencoded({extended:false}));
 app.use(bodyparser.json());
 
 app.use('/details',fac_routes);
+
 app.get('/',(req,res)=>{
 	res.send('Hello World!!');
 });
 
-mongoose.connect("mongodb://localhost:27017/FacultyProfile",{useUrlNewParser:true},()=>{
+mongoose.connect("mongodb://127.0.0.1/FacultyProfile",{useUrlNewParser:true},()=>{
 	console.log("Connected to db");
 });
 
